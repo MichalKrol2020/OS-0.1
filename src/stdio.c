@@ -1,5 +1,4 @@
-#include "stdio.h"
-
+#include "../inc/stdio.h"
 
 
 uint8_t terminal_row = 0;

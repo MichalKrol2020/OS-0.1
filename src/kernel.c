@@ -1,5 +1,5 @@
-#include "kernel.h"
-#include "stdio.h"
+#include "../inc/kernel.h"
+#include "../inc/stdio.h"
 
 void kernel_main() 
 {
