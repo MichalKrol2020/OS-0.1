@@ -5,10 +5,12 @@
 #define IDT_GATE_TYPE_INTERRUPT         0xEEu // 0xEE instead of 0x0E because we have to take into account DPL, Segment and Present bits
 #define IDT_HIGHER_OFFSET_SHIFT_BITS    16    // we need to make a shift because we only want the higher bits of the offset
 
-#define MASTER_PIC_PORT20               0x20
-#define MASTER_PIC_PORT21               0x21
-#define PIC_ACK_VALUE                   0x20
-#define IRQ21_KEYBOARD_PRESS_NO         0x21
+#define MASTER_PIC_PORT20               0x20u
+#define MASTER_PIC_PORT21               0x21u
+#define PIC_ACK_VALUE                   0x20u
+
+#define IRQ0_PIT_TICK_NO                0x20u
+#define IRQ21_KEYBOARD_PRESS_NO         0x21u
 
 typedef struct __attribute__ ((packed))
 {
@@ -28,4 +30,5 @@ typedef struct __attribute__ ((packed))
 void idt_init();
 void enable_interrupts();
 void disable_interrupts();
+
 #endif

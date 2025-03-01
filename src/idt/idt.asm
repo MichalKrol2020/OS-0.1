@@ -1,8 +1,10 @@
 section .asm 
 
+extern int20h_handler
 extern int21h_handler
 extern no_interrupt_handler
 
+global int20h
 global int21h
 global idt_load
 global enable_interrupts
@@ -26,7 +28,15 @@ idt_load:
     pop ebp ; Pop the saved base pointer value from the stack, restoring the previous stack frame.
     ret
 
-init21h: ; we should always create interrupt handler wrapper in assembly to return from the interrupt properly
+int20h:
+    cli
+    pushad
+    call int20h_handler
+    popad
+    sti
+    iret
+
+int21h: ; we should always create interrupt handler wrapper in assembly to return from the interrupt properly
     cli
     pushad ; pushes EAX, ECX, EDX, EBX, original ESP, EBP, ESI and EDI - we need to save those registers because when we do iret, it expects those registers state to be the same
     call int21h_handler

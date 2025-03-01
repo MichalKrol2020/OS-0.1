@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "idt.h": "c",
+        "io.h": "c",
+        "config.h": "c",
+        "memory.h": "c",
+        "kheap.h": "c",
+        "heap.h": "c",
+        "random": "c",
+        "*.tcc": "c",
+        "kernel.h": "c",
+        "status.h": "c",
+        "utils.h": "c",
+        "paging.h": "c",
+        "graphics.h": "c",
+        "logo.h": "c",
+        "logo-config.h": "c",
+        "logo-first.h": "c",
+        "logo-second.h": "c",
+        "startup.h": "c",
+        "graphics-mem.h": "c",
+        "timer.h": "c",
+        "linked-list.h": "c",
+        "animations.h": "c"
+    }
+}
